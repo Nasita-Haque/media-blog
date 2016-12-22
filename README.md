@@ -1,2 +1,2 @@
-# media-blog
-One stop site for tv/film content. 
+# Media Blog
+One stop blog for tv/film content. 
