@@ -1,2 +1,2 @@
 # Media Blog
-One stop blog for tv/film content. 
+One stop blog for Japanese blog content. 
