@@ -9,7 +9,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Prefecture.hasMany(models.Post);
+        Prefecture.belongsToMany(models.Post, {
+          through: "Prefecture_Post"
+        });
       }
     }
   });

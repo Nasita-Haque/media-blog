@@ -9,12 +9,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Tag.belongsTo(models.Post,{
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        });
+        Tag.belongsTo(models.Post);
       }
     }
   });

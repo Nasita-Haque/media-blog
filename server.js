@@ -15,6 +15,6 @@ app.get('/*', function(req, res) {
 })
 
 db.sequelize.sync().then(function() {
-  console.log('Listening in on localhost 3000')
-  app.listen(3000)
+  console.log('Listening in on localhost 4200')
+  app.listen(4200)
 })

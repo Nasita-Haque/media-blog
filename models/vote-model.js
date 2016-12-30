@@ -6,14 +6,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Vote.belongsTo(models.Post,{
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        });
+        Vote.belongsTo(models.Post);
       }
     }
   });
-  return Comment;
+  return Vote;
 };

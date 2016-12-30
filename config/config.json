@@ -2,22 +2,22 @@
   "development": {
     "username": "crazykiwi",
     "password": null,
-    "database": "database_development",
+    "database": "japan-db",
     "host": "127.0.0.1",
-    "dialect": "postgress"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "japan-db",
     "host": "127.0.0.1",
-    "dialect": "postgress"
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgress"
+    "dialect": "postgres"
   }
 }

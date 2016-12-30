@@ -13,24 +13,14 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Post.hasMany(models.Comment, {
-          through: Post_Comment
+        Post.belongsToMany(models.Comment, {
+          through: "Post_Comment"
         })
-        Post.hasMany(models.Tag, {
-          through: Post_Tag
+        Post.belongsToMany(models.Tag, {
+          through: "Post_Tag"
         })
-        Post.belongsTo(models.prefecture,{
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        })
-        Post.belongsTo(models.User,{
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        });
+        Post.belongsTo(models.Prefecture)
+        Post.belongsTo(models.User)
       }
     }
   });
