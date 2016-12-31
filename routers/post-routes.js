@@ -22,7 +22,7 @@ let getPost = ((req, res)=>{
 //Get all posts from a user 
 let getUserPost = ((req, res)=>{
 	models.Post.findAll({
-		where: {UserId: req.params.userId},
+		where: {UserId: req.params.id},
 		include: [{model: models.Comment}],
 		include: [{model: models.Prefecture}],
 		include: [{model: models.Tag}]
@@ -59,11 +59,9 @@ let postPost = ((req, res)=>{
 		})
 	})
 	.then((post)=>{
-		console.log('post=>', post)
 		 postId = post.id
 	})
 	.then(()=>{
-		console.log('postId=>', postId)
 		models.Tag.findOrCreate({
 			where: {
 				tag: req.body.tag,
@@ -88,16 +86,21 @@ let deletePost = ((req, res)=>{
 			id: req.params.id
 		}
 	})
+	.then(()=>{
+		res.status(200).send('Post successfully deleted.')
+	})
+	.catch((error)=>{
+		res.status(500).send('Error. Check routes.')
+		console.log('Error=>', error)
+	})
 })
 
 postRoutes.route('/')
 	.get(getPost)
 	.post(postPost)
 
-postRoutes.route('/:userId')
-	.get(getUserPost)
-
 postRoutes.route('/:id')
+	.get(getUserPost)
 	.delete(deletePost)
 
 
