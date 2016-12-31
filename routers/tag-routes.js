@@ -14,7 +14,7 @@ let getTag = ((req, res)=>{
 	})
 });
 
-//Get top 5 tags
+//Get top 5 tags <-UNSURE ABOUT THIS: ASK! 
 // let getTop5Tag = ((req, res)=>{
 // 	models.Tag.findAndCountAll()
 // 	.then((tag)=>{
