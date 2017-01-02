@@ -29,7 +29,7 @@ let getTag = ((req, res)=>{
 tagRoutes.route('/')
 	.get(getTag)
 
-tagRoutes.route('/getTop5Tag')
-	.get(getTop5Tag)
+// tagRoutes.route('/getTop5Tag')
+// 	.get(getTop5Tag)
 
 module.exports = tagRoutes;
