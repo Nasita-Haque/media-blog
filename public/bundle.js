@@ -68,6 +68,10 @@
 	
 	var _popular2 = _interopRequireDefault(_popular);
 	
+	var _prefecture = __webpack_require__(241);
+	
+	var _prefecture2 = _interopRequireDefault(_prefecture);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var App = _react2.default.createClass({
@@ -89,7 +93,8 @@
 			_reactRouter.Route,
 			{ path: '/', component: App },
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: 'popular', component: _popular2.default })
+			_react2.default.createElement(_reactRouter.Route, { path: 'popular', component: _popular2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: 'prefecture/:prefecture', component: _prefecture2.default })
 		)
 	), document.getElementById('root'));
 
@@ -26527,7 +26532,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body{\n\toverflow-x: hidden;\n}\n\n/*-------------NAVBAR-----------*/\n.fixed-navbar{\n\t/*position: absolute;*/\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\twidth: 100%;\n\theight: 100px;\n\tbackground-color: white;\n\tmax-width: 100%;\n\tpadding-bottom: 12px;\n}\n\n.fixed-navbar > ul > li{\n\tdisplay: inline-block;\n\tlist-style-type: none;\n\tpadding-right: 86px;\n}\n\n.navbar-ul{\n\ttext-align: center; \n\tpadding-top: 0px;\n}\n\n.navbar-ul a {\n\ttext-decoration: none;\n\tfont-family: 'Karma', serif;\n\tfont-size: 18px;\n\tfloat: left;\n \tmargin: 0;\n \tcursor: pointer;\n}\n\n.navbar-ul img{\n\t/*float: left;\n*/\tpadding-top: 0;\n}\n\n/*-------------HOME-----------*/\n.homepage{\n\tposition: relative;\n\tbackground-size: cover;\n\tfloat: left;\n\twidth: 450px;\n\theight: 900px;\n\t/*margin-top: 100px;*/\n}\n\n/*-------------Prefectures-----------*/\n\n.prefecture-div{\n\n}\n\n.prefectures-content-1{\n\tfloat: left;\n\tfont-family: 'Karma', serif;\n}\n\n.prefectures-content-2{\n\tposition: absolute;\n\tmargin-left: 200px;\n\tfloat:left;\n}\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "body{\n\toverflow-x: hidden;\n}\n\n/*-------------NAVBAR-----------*/\n.fixed-navbar{\n\t/*position: absolute;*/\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\twidth: 100%;\n\theight: 100px;\n\tbackground-color: white;\n\tmax-width: 100%;\n\tpadding-bottom: 12px;\n}\n\n.fixed-navbar > ul > li{\n\tdisplay: inline-block;\n\tlist-style-type: none;\n\tpadding-right: 86px;\n}\n\n.navbar-ul{\n\ttext-align: center; \n\tpadding-top: 0px;\n}\n\n.navbar-ul a {\n\ttext-decoration: none;\n\tfont-family: 'Karma', serif;\n\tfont-size: 18px;\n\tfloat: left;\n \tmargin: 0;\n \tcursor: pointer;\n}\n\n.navbar-ul a:hover {\n    text-decoration: underline;\n}\n\n.navbar-ul img{\n\t/*float: left;\n*/\tpadding-top: 0;\n}\n\n/*-------------HOME-----------*/\n.homepage{\n\tposition: relative;\n\tbackground-size: cover;\n\tfloat: left;\n\twidth: 450px;\n\theight: 900px;\n\t/*margin-top: 100px;*/\n}\n\n/*-------------Prefectures-----------*/\n\n.prefecture-div{\n\n}\n\n.prefectures-content-1{\n\tfloat: left;\n\tfont-family: 'Karma', serif;\n\tlist-style-type:none;\n}\n\n.prefectures-content-1 li  a{\n\ttext-decoration: none;\n\tcolor: #ff8100;\n}\n\n.prefectures-content-2{\n\tfloat:left;\t\n\tpadding-left: 200px;\n\t/*margin-left: 300px;*/\n\toverflow-x: hidden;\n\n}\n\n\n\n\n\n\n\n\n\n", ""]);
 	
 	// exports
 
@@ -26891,6 +26896,8 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
+	var _reactRouter = __webpack_require__(178);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Popular = _react2.default.createClass({
@@ -26914,15 +26921,19 @@
 				return _react2.default.createElement(
 					'li',
 					{ key: idx },
-					val.prefecture
+					_react2.default.createElement(
+						_reactRouter.Link,
+						{ to: '/prefecture/' + val.prefecture },
+						val.prefecture
+					)
 				);
-				console.log('prefecture:', val.prefecture);
+				// console.log('prefecture:', val.prefecture)
 			});
 			return _react2.default.createElement(
 				'div',
 				{ className: 'prefecture-div' },
 				_react2.default.createElement(
-					'ol',
+					'ul',
 					{ className: 'prefectures-content-1' },
 					displayPrefectures
 				),
@@ -37162,6 +37173,36 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Prefecture = _react2.default.createClass({
+		displayName: 'Prefecture',
+		render: function render() {
+			console.log(this.props.params.prefecture);
+			return _react2.default.createElement('div', null);
+		}
+	});
+	
+	exports.default = Prefecture;
 
 /***/ }
 /******/ ]);
