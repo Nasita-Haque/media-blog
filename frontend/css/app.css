@@ -35,6 +35,10 @@ body{
  	cursor: pointer;
 }
 
+.navbar-ul a:hover {
+    text-decoration: underline;
+}
+
 .navbar-ul img{
 	/*float: left;
 */	padding-top: 0;
@@ -59,13 +63,22 @@ body{
 .prefectures-content-1{
 	float: left;
 	font-family: 'Karma', serif;
+	list-style-type:none;
+}
+
+.prefectures-content-1 li  a{
+	text-decoration: none;
+	color: #ff8100;
 }
 
 .prefectures-content-2{
-	position: absolute;
-	margin-left: 200px;
-	float:left;
+	float:left;	
+	padding-left: 200px;
+	/*margin-left: 300px;*/
+	overflow-x: hidden;
+
 }
+
 
 
 
