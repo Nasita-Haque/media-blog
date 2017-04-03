@@ -1,5 +1,5 @@
 # Media Blog
-One stop blog for Japanese blog content. 
+One stop blog for my travel content. 
 
 Post:
 	Title:
